@@ -1,9 +1,9 @@
 from flask import *  
 from flask_wtf import FlaskForm
-from wtforms import StringField,SubmitField,RadioField,SelectField
-import numpy as np 
+from wtforms import StringField,SubmitField
+# import numpy as np 
 from keras.models import load_model
-from sklearn.preprocessing import LabelEncoder
+# from sklearn.preprocessing import LabelEncoder
 from flask_wtf.csrf import CSRFProtect
 import pickle
 import pandas as pd
