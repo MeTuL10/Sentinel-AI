@@ -9,8 +9,21 @@ import pickle
 import pandas as pd
 from keras.utils import pad_sequences
 
-def return_prediction_mail(model,user_input): #needs to be updated   
-    temp=1
+def return_prediction_mail(model,user_input):  
+      mail=[str(user_input['mail'])]
+      with open('models\\mailtoken.pickle', 'rb') as handle:
+            t = pickle.load(handle)
+      maxlen1=5916
+      df1=pd.DataFrame(mail,columns=["text"])
+      x=df1["text"]
+      sequences = t.texts_to_sequences(x)
+      sequences_matrix = pad_sequences(sequences,maxlen=maxlen1)
+      output=model.predict(sequences_matrix)
+      output=output[0][0]
+      if output>0.2:
+           return "Spam"
+      else:
+           return "safe"
     
 def return_prediction_url(model,user_input): #needs to be updated   
     temp=1
@@ -36,6 +49,10 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = '6c6722beeac20a0d45f7e977'
 CSRFProtect(app)
 
+class mailForm(FlaskForm):
+    mail = StringField('mail')
+    submit = SubmitField('Predict')
+
 class smsForm(FlaskForm):
     sms = StringField('sms')
     submit = SubmitField('Predict')
@@ -44,9 +61,22 @@ class smsForm(FlaskForm):
 def home():  
       return render_template('index.html')  
 
-@app.route('/Email')
+@app.route('/Email', methods=['GET', 'POST'])
 def Email():
-      return render_template('Email.html')
+      predictor = load_model('models\\mail.keras')
+      form = mailForm()
+      if form.is_submitted():
+            print("submitted")
+
+      if form.validate():
+            print("valid")
+
+      print(form.errors)
+      if form.validate_on_submit():
+            session['mail'] = form.mail
+            results= return_prediction_mail(predictor,session)
+            return render_template('Email.html',form=form,results=results)
+      return render_template('Email.html',form=form,results='')
 
 @app.route('/URL')
 def URL():
