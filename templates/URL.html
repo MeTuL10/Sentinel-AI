@@ -19,9 +19,13 @@
     <a href="Messages">Messages</a>
     </a>
   </div>
-  <textarea name="message" rows="4" class="custom-input"></textarea>
-  <br />
-  <input type="submit" class="btn-info" value="Predict">
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="custom-input">{{form.url}}</div>
+    <!-- <input type="submit" class="btn-info" value="Predict"> -->
+    <div class="inputbox">{{ form.submit(class="btn-info") }}</div>
+    <div class="output">{{results}}</div>
+</form>
 </body>
 
 </html>
