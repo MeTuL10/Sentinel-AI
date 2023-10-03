@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'CustomFont';
+    src:url('RunescapeFont/font/runescape_chat_font.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+ *{
+  font-family: 'CustomFont', monospace;
+ }
+  body {
+    place-items: center;
+    background-color: black;
+    margin: 0rem;
+    overflow: hidden;
+  }
+  header{
+    position: fixed;
+    top: 0;
+    left:0;
+    width:100%;
+    padding: 2rem 2rem ;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    z-index: 100;
+}
+  
+  .topnav a {
+    color: yellow;
+    text-align: center;
+    font-size: 30px;
+    padding: 0 4vw;
+  }
+  
+  .topnav a:hover {
+    background-color: yellow;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: yellow;
+    color: black;
+  }
+  .about {
+    padding:4rem;
+    color: yellow;
+    font-size: 25px;
+    align-self: center;
+  }
+  .about a{
+    color: yellow;
+  }
+  .custom-input {
+    font-family: 'CustomFont', monospace;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  .btn-info {
+    font-family: 'CustomFont', monospace;
+    background-color: black;
+    color: yellow;
+    border: 2px solid yellow;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  .btn-info:hover {
+    font-family: 'CustomFont', monospace;
+    background-color: yellow;
+    color: black;
+  }
+  .output {
+    color:aliceblue;
+  }

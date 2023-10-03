@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Rubik:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <nav class="topnav" id="myTopnav">
+      <a href="index.html" class="active">Home</a>
+      <a href="Email.html">Email</a>
+      <a href="URL.html">URL</a>
+      <a href="Messages.html">Messages</a>
+      </a>
+    </nav></header>
+  <!-- Text Box -->
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="custom-input">{{form.mail}}</div>
+    <!-- <input type="submit" class="btn-info" value="Predict"> -->
+    <div class="inputbox">{{ form.submit(class="btn-info") }}</div>
+    <div class="output">{{results}}</div>
+</form>
+</body>
+
+</html>
