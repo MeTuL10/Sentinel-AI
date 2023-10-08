@@ -12,20 +12,30 @@
 
 <body>
 
-  <div class="topnav" id="myTopnav">
-    <a href="/">Home</a>
-    <a href="Email" class="active">Email</a>
-    <a href="URL">URL</a>
-    <a href="Messages">Messages</a>
-  </div>
+  <header class="header">
+    <nav class="topnav" id="myTopnav">
+      <a href="/" class="active">Home</a>
+      <a href="Email">Email</a>
+      <a href="URL">URL</a>
+      <a href="Messages">Messages</a>
+      </a>
+    </nav></header>
   <!-- Text Box -->
-  <form method="POST">
+  <p class="about">E-mail prediction<br>
+    model : Nueral network model with dense layers
+    <br> Accuracy: 94.9%<br>
+    <br> Enter the e-email subject or content(subject + content will provide better analysis)
+  </p>
+    <form method="POST">
     {{ form.hidden_tag() }}
     <div class="custom-input">{{form.mail}}</div>
     <!-- <input type="submit" class="btn-info" value="Predict"> -->
     <div class="inputbox">{{ form.submit(class="btn-info") }}</div>
     <div class="output">{{results}}</div>
 </form>
+<footer>
+  <p class="designer">Made by <a href="https://github.com/MeTuL10">Metul Prabhu</a> and <a href="https://github.com/OmbudRov">Abhinav Bhatia</a></p>
+</footer>
 </body>
 
 </html>

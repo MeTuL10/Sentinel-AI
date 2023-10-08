@@ -18,11 +18,13 @@
     top: 0;
     left:0;
     width:100%;
-    padding: 2rem 2rem ;
+    padding: 1.5rem 2rem ;
     display: flex;
     justify-content:center;
     align-items: center;
     z-index: 100;
+    /* background-color: #333; */
+
 }
   
   .topnav a {
@@ -42,7 +44,7 @@
     color: black;
   }
   .about {
-    padding:4rem;
+    padding:5rem;
     color: yellow;
     font-size: 25px;
     align-self: center;
@@ -79,3 +81,21 @@
   .output {
     color:aliceblue;
   }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: yellow; 
+    /* padding: 5px 0;  */
+    font-size: 20px;
+    background-color: #333;
+  
+}
+  footer a{
+    color: yellow;
+  }
+form {
+  padding: 5rem 0;
+}

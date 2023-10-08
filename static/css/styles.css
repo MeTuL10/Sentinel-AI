@@ -4,63 +4,104 @@
     font-weight: normal;
     font-style: normal;
   }
-  body {
-    place-items: center;
-    background-color: black;
-    margin: 0rem;
-    overflow: hidden;
-  }
-  .topnav {
-    overflow: hidden;
-  }
+  *{
+    font-family: 'CustomFont', monospace;
+   }
+    body {
+      place-items: center;
+      background-color: black;
+      margin: 0rem;
+      overflow: hidden;
+    }
+    header{
+      position: fixed;
+      top: 0;
+      left:0;
+      width:100%;
+      padding: 1.5rem 2rem ;
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      z-index: 100;
+      background-color: #333;
   
-  .topnav a {
-    font-family: 'CustomFont', monospace;
-    float: left;
-    display: block;
-    color: yellow;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 30px;
   }
+    
+    .topnav a {
+      color: yellow;
+      text-align: center;
+      font-size: 30px;
+      padding: 0 4vw;
+    }
+    
+    .topnav a:hover {
+      background-color: yellow;
+      color: black;
+    }
+    
+     /* .topnav a.active {
+      background-color: yellow;
+      color: black;
+    }  */
+    .about {
+      padding:5rem 0 0 5rem;
+
+      color: yellow;
+      font-size: 25px;
+      align-self: center;
+    }
+    .about a{
+      color: yellow;
+    }
+    
+     form {
+      padding: 0 0 0 5rem;
+    } 
+    .custom-input {
+      font-family: 'CustomFont', monospace;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 16px;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
   
-  .topnav a:hover {
-    background-color: yellow;
-    color: black;
-  }
+    .btn-info {
+      font-family: 'CustomFont', monospace;
+      background-color: black;
+      color: yellow;
+      border: 2px solid yellow;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 20px;
+    }
   
-  .topnav a.active {
-    background-color: yellow;
-    color: black;
+    .btn-info:hover {
+      font-family: 'CustomFont', monospace;
+      background-color: yellow;
+      color: black;
+    }
+    
+    .output {
+      color: yellow;
+      font-size: 20px;
+      padding: 1rem 0 0 0;
+    }
+  
+    footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      color: yellow; 
+      /* padding: 5px 0;  */
+      font-size: 20px;
+      background-color: #333;
+    
   }
-
-  .custom-input {
-    font-family: 'CustomFont', monospace;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 16px;
-    width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-  }
-
-  .btn-info {
-    font-family: 'CustomFont', monospace;
-    background-color: black;
-    color: yellow;
-    border: 2px solid yellow;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 20px;
-  }
-
-  .btn-info:hover {
-    font-family: 'CustomFont', monospace;
-    background-color: yellow;
-    color: black;
-  }
-  .output {
-    color:aliceblue;
-  }
+    footer a{
+      color: yellow;
+    }
+  
