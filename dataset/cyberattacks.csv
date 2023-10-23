@@ -19,4 +19,203 @@ phishing,Your login session has expired - click to log in.
 phishing,Suspicious login attempt - confirm your identity.
 phishing,Your email account is at risk - verify your information.
 phishing,Please update your personal information immediately.
-Spear Phishing,
+Spear Phishing,I need your help - can you wire funds today?
+Spear Phishing,Confidential proposal for your eyes only.
+Spear Phishing,Meeting agenda for our upcoming board discussion.
+Spear Phishing,Re: Upcoming merger details - please confirm.
+Spear Phishing,Important HR document - review and sign.
+Spear Phishing,Urgent: Need your assistance with a financial matter.
+Spear Phishing,Action required on this confidential project - please reply.
+Spear Phishing,Verify these sensitive company details for me.
+Spear Phishing,Business opportunity: Please respond with your contact.
+Spear Phishing,Meeting follow-up - kindly reply to this message.
+Spear Phishing,Urgent: Financial matter requires your immediate attention.
+Spear Phishing,Project update - please acknowledge receipt of this email.
+Spear Phishing,Confirmation needed on these critical financial figures.
+Spear Phishing,Employee payroll update - please review and confirm.
+Spear Phishing,Executive decision - please reply to this message.
+Spear Phishing,Sensitive legal document - please acknowledge receipt.
+Spear Phishing,Request for wire transfer - please confirm immediately.
+Spear Phishing,Compliance audit - your response is needed.
+Spear Phishing,Request for sensitive client information - please reply.
+Spear Phishing,Employee benefits update - please respond promptly.
+Malware Distribution,Invoice attached - please review and process.
+Malware Distribution,Here's the contract you requested - open ASAP.
+Malware Distribution,Track your package by opening the attached file.
+Malware Distribution,Your flight details - click to view your itinerary.
+Malware Distribution,E-card from a friend - open to see the message.
+Malware Distribution,Download this important document for your records.
+Malware Distribution,Attachment: Scan results - please review and respond.
+Malware Distribution,Your payment receipt is attached - open to confirm.
+Malware Distribution,Access your e-ticket by opening the attached file.
+Malware Distribution,Open this file to access your account statement.
+Malware Distribution,Important notice - please open the attached document.
+Malware Distribution,Attachment: Resume for your job application.
+Malware Distribution,Download this photo album from our recent event.
+Malware Distribution,Check this PDF for the latest company report.
+Malware Distribution,Attached: Urgent message from our CEO - please read.
+Malware Distribution,Your software update is ready - click to install.
+Malware Distribution,Access your prize by opening the attached document.
+Malware Distribution,Secure document attached - open to review the details.
+Malware Distribution,Attachment: Important information - please read.
+Malware Distribution,Download your gift voucher - open the attached file.
+Ransomware Attacks,Your files are encrypted - pay now to unlock.
+Ransomware Attacks,Time is running out - pay the ransom or lose data.
+Ransomware Attacks,Ransomware infection - follow instructions to recover.
+Ransomware Attacks,Decrypt your files - Bitcoin payment instructions.
+Ransomware Attacks,Urgent: Your data is under our control - pay up.
+Ransomware Attacks,Access to your files is restricted - make a payment.
+Ransomware Attacks,Important: Pay a ransom to regain access to your data.
+Ransomware Attacks,Your documents are locked - send payment for decryption.
+Ransomware Attacks,Data breach: Pay a ransom to regain control.
+Ransomware Attacks,Your system is compromised - pay a ransom for access.
+Ransomware Attacks,Your files are inaccessible - send payment for decryption.
+Ransomware Attacks,Data hijacked - send payment for release.
+Ransomware Attacks,Your documents are encrypted - make a payment.
+Ransomware Attacks,Your data is compromised - send a ransom to recover it.
+Ransomware Attacks,Urgent: Your files are under our control - pay now.
+Ransomware Attacks,Your system is compromised - make a Bitcoin payment.
+Ransomware Attacks,Your files are encrypted - pay to decrypt them.
+Ransomware Attacks,Data breach: Pay a ransom to regain access.
+Ransomware Attacks,Your documents are locked - send payment for decryption.
+Ransomware Attacks,Data hijacked - send payment for release.
+Business Email Compromise,Wire transfer request - please confirm immediately.
+Business Email Compromise,Change in invoice payment details - act promptly.
+Business Email Compromise,CEO's urgent request - initiate the wire transfer.
+Business Email Compromise,Supplier payment update - important instructions.
+Business Email Compromise,Revised payment instructions - please confirm.
+Business Email Compromise,Urgent wire transfer needed - please act swiftly.
+Business Email Compromise,Financial matter: Please initiate this transaction.
+Business Email Compromise,Request for funds - immediate action required.
+Business Email Compromise,Update: Please confirm these payment details.
+Business Email Compromise,Critical payment request - please verify and send.
+Business Email Compromise,CEO's confidential request - please respond urgently.
+Business Email Compromise,Invoice modification - please acknowledge and proceed.
+Business Email Compromise,Request for financial assistance - prompt response needed.
+Business Email Compromise,Please confirm these changes to our payment method.
+Business Email Compromise,Urgent: Financial matter - please acknowledge and comply.
+Business Email Compromise,Wire transfer update - act quickly to avoid delays.
+Business Email Compromise,Vendor payment adjustment - please confirm the details.
+Business Email Compromise,Urgent action required: Verify and process this payment.
+Business Email Compromise,Important transaction - please acknowledge and proceed.
+Business Email Compromise,Action needed: Confirm these payment instructions.
+Email Spoofing,Sent from a trusted contact - click the link.
+Email Spoofing,Important message from your boss - read now.
+Email Spoofing,Your friend has shared a document - open to view.
+Email Spoofing,Secure message from your bank - click to log in.
+Email Spoofing,Received from your service provider - verify your account.
+Email Spoofing,Open the attachment - it's from your colleague.
+Email Spoofing,Your family member sent you a file - click to open.
+Email Spoofing,You have a voicemail from a trusted source - listen now.
+Email Spoofing,Document shared by your coworker - click to access.
+Email Spoofing,Click the link to view the video your friend sent.
+Email Spoofing,Message from a family member - open the attachment.
+Email Spoofing,Important update from your manager - read now.
+Email Spoofing,Your friend shared a photo with you - click to see.
+Email Spoofing,Urgent message from your coworker - click to read.
+Email Spoofing,Important document shared by your colleague - open it.
+Email Spoofing,Secure message from your bank - click to log in.
+Email Spoofing,Received from your service provider - verify your account.
+Email Spoofing,Open the attachment - it's from your colleague.
+Email Spoofing,Your family member sent you a file - click to open.
+Email Spoofing,You have a voicemail from a trusted source - listen now.
+Credential Theft,Your account has been compromised - reset your password.
+Credential Theft,Unauthorized access detected - verify your login details.
+Credential Theft,Account security breach - confirm your identity now.
+Credential Theft,Login verification required - protect your account.
+Credential Theft,Access denied - please try again.
+Credential Theft,Your password has been changed - confirm this action.
+Credential Theft,Immediate action required - confirm your login credentials.
+Credential Theft,Your account is temporarily locked - reset your password.
+Credential Theft,Your login credentials are incorrect - update now.
+Credential Theft,Access denied - please reset your password.
+Credential Theft,Your account has been locked - confirm your identity.
+Credential Theft,Your login session has expired - please log in again.
+Credential Theft,Suspicious login attempt - verify your identity.
+Credential Theft,Your email account is at risk - confirm your information.
+Credential Theft,Your access is restricted - validate your credentials.
+Credential Theft,Your password needs to be updated - verify your identity.
+Credential Theft,Account security notice - please update your information.
+Credential Theft,Immediate action required - confirm your login details.
+Credential Theft,Your account has been compromised - please respond.
+Credential Theft,Unauthorized access detected - protect your account.
+SMS Phishing,Verify your account to avoid suspension.
+SMS Phishing,Urgent security update needed for your account.
+SMS Phishing,Suspicious activity detected - confirm your identity.
+SMS Phishing,Your password has expired - reset it now.
+SMS Phishing,Click the link to claim your lottery winnings.
+SMS Phishing,Review and update your personal information.
+SMS Phishing,Unlock your account by verifying your mobile number.
+SMS Phishing,Your account is locked - action required.
+SMS Phishing,Your email account has been compromised - reactivate it.
+SMS Phishing,"Congratulations, you've won a gift card - claim it now."
+SMS Phishing,Unauthorized login attempt - verify your identity.
+SMS Phishing,Login verification needed for account access.
+SMS Phishing,Account verification is mandatory to continue using our services.
+SMS Phishing,Your package delivery is delayed - update your address.
+SMS Phishing,Update your payment information to avoid service interruption.
+SMS Phishing,Your bank account has been restricted - call to resolve.
+SMS Phishing,Click the link to access your exclusive content.
+SMS Phishing,Access your invoice by clicking the provided link.
+SMS Phishing,Unusual login activity detected - confirm your identity.
+SMS Phishing,Important message from your bank - call this number.
+Instant Messaging Malware Distribution,Download the latest software update for your device.
+Instant Messaging Malware Distribution,Check out this funny video - it's a must-see!
+Instant Messaging Malware Distribution,Open this document for important information.
+Instant Messaging Malware Distribution,Claim your discount coupon - click here.
+Instant Messaging Malware Distribution,Click the link to access the newest app features.
+Instant Messaging Malware Distribution,Get the latest app update - download it now.
+Instant Messaging Malware Distribution,Unlock the premium features by clicking the link.
+Instant Messaging Malware Distribution,Download this file for exclusive content.
+Instant Messaging Malware Distribution,Access your prize by clicking the provided link.
+Instant Messaging Malware Distribution,View these photos from the recent event.
+Instant Messaging Malware Distribution,Download your e-ticket for the upcoming event.
+Instant Messaging Malware Distribution,Access your voucher by clicking the link.
+Instant Messaging Malware Distribution,Open the attachment for detailed instructions.
+Instant Messaging Malware Distribution,Your video invitation is ready - click here to watch.
+Instant Messaging Malware Distribution,Download the exclusive music track now.
+Instant Messaging Malware Distribution,Access your e-gift card by clicking the link.
+Instant Messaging Malware Distribution,Your private message is ready for viewing.
+Instant Messaging Malware Distribution,Open this document to view the agenda.
+Instant Messaging Malware Distribution,Get the exclusive wallpaper by clicking the link.
+Instant Messaging Malware Distribution,Download your e-book by clicking here.
+Social Engineering,"Hi, I'm a friend of your friend - can you help me out?"
+Social Engineering,I'm your coworker - can you share confidential info?
+Social Engineering,You've won a contest - send personal details to claim.
+Social Engineering,Donate to this charity - it's for a good cause.
+Social Engineering,Unlock exclusive content - send us your username and password.
+Social Engineering,I need a quick favor - can you send me some money?
+Social Engineering,"Hi, it's [Name] - can you transfer funds to this account?"
+Social Engineering,I'm in a tight spot - can you lend me some cash?
+Social Engineering,"Hey, it's [Name] - can you send me your bank details?"
+Social Engineering,Your assistance is needed - can you help me financially?
+Social Engineering,I'm in need of financial help - can you send me some money?
+Social Engineering,"It's [Name] - I'm stranded, and I need money urgently."
+Social Engineering,I'm your cousin - can you wire me some money?
+Social Engineering,I'm in a crisis - can you send me funds immediately?
+Social Engineering,I need you to transfer money to my account - it's urgent.
+Social Engineering,It's [Name] - can you help me with a financial issue?
+Social Engineering,Your support is required - can you send money right away?
+Social Engineering,It's an emergency - can you provide financial assistance?
+Social Engineering,I'm in a financial bind - can you transfer funds?
+Social Engineering,I need your help - can you send me some money?
+Message Spoofing for Phishing,Sent from a trusted contact - click the link.
+Message Spoofing for Phishing,Important message from your boss - read now.
+Message Spoofing for Phishing,Your friend has shared a document - open to view.
+Message Spoofing for Phishing,Secure message from your bank - click to log in.
+Message Spoofing for Phishing,Received from your service provider - verify your account.
+Message Spoofing for Phishing,Open the attachment - it's from your colleague.
+Message Spoofing for Phishing,Your family member sent you a file - click to open.
+Message Spoofing for Phishing,You have a voicemail from a trusted source - listen now.
+Message Spoofing for Phishing,Document shared by your coworker - click to access.
+Message Spoofing for Phishing,Click the link to view the video your friend sent.
+Message Spoofing for Phishing,Message from a family member - open the attachment.
+Message Spoofing for Phishing,Important update from your manager - read now.
+Message Spoofing for Phishing,Your friend shared a photo with you - click to see.
+Message Spoofing for Phishing,Urgent message from your coworker - click to read.
+Message Spoofing for Phishing,Important document shared by your colleague - open it.
+Message Spoofing for Phishing,Secure message from your bank - click to log in.
+Message Spoofing for Phishing,Received from your service provider - verify your account.
+Message Spoofing for Phishing,Open the attachment - it's from your colleague.
+Message Spoofing for Phishing,Your family member sent you a file - click to open.
+Message Spoofing for Phishing,You have a voicemail from a trusted source - listen now.
