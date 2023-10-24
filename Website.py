@@ -15,7 +15,12 @@ from tld import get_tld
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-
+import re
+import nltk
+from nltk.corpus import stopwords
+import contractions
+import string
+import json
 def urlprocess(df): # feature extraction of url
       def having_ip_address(url):
             match = re.search(
@@ -174,6 +179,49 @@ def url_model_train(): #traing the random forest model for url prediction
       return rf
 rf=url_model_train()
 
+english_punctuations = string.punctuation
+punctuations_list = english_punctuations
+stop_words = stopwords.words('english')
+def preprocess(data):
+      def small(data):
+            return data.lower()
+      def cleaning_numbers(data):
+            return re.sub('[0-9]+', '', data)
+      def cleaning_contractions(text):
+            text=text.split()
+            corrected=[]
+            for word in text:
+                  corrected.append(contractions.fix(word))
+            return " ".join(corrected)
+      def cleaning_punctuations(text):
+            return re.sub(re.compile("["+punctuations_list+"‼️’]")," ",text)
+      def cleaning_stopwords(data):
+            words = data.split()
+            filtered_words = [word for word in words if word not in stop_words]
+            filtered_text = ' '.join(filtered_words)
+            return filtered_text
+      temp=small(data)
+      temp=cleaning_numbers(temp)
+      temp=cleaning_contractions(temp)
+      temp=cleaning_punctuations(temp)
+      temp=cleaning_stopwords(temp)
+      return temp
+
+def custom_model(data):
+      data=preprocess(data)
+      data=data.split()
+      f=open("models\\cyberattacks.json")
+      model=json.load(f)
+      attacks=model.keys()
+      predictions=dict()
+      for i in attacks:
+            for j in data:
+
+                  predictions[i]=predictions.get(i,0)+model[i].get(j,0)
+      predictions=dict(sorted(predictions.items(),key=lambda x: x[1], reverse=True))
+      temp=list(predictions.keys())
+      return(temp[0])
+
 def return_prediction_mail(model,user_input):  
       mail=[str(user_input['mail'])]
       with open('models\\mailtoken.pickle', 'rb') as handle:
@@ -186,9 +234,9 @@ def return_prediction_mail(model,user_input):
       output=model.predict(sequences_matrix)
       output=output[0][0]
       if output>0.2:
-           return "Spam"
+           return "Spam,"+custom_model(str(user_input['mail']))
       else:
-           return "safe"
+           return "safe,"+custom_model(str(user_input['mail']))
     
 def return_prediction_url(model,user_input):   
       map=['benign', 'defacement', 'malware', 'phishing']
@@ -199,8 +247,7 @@ def return_prediction_url(model,user_input):
             'count%', 'count?', 'count-', 'count=', 'url_length','hostname_length', 'sus_url', 'fd_length', 'tld_length', 'count-digits','count-letters']]
       y=model.predict(X)
       return map[y[0]]
-
-    
+ 
 def return_prediction_sms(model,user_input):    
       sms=[str(user_input['sms'])]
       with open('models\\smstoken.pickle', 'rb') as handle:
@@ -214,9 +261,9 @@ def return_prediction_sms(model,user_input):
       output=model.predict(sequences_matrix)
       output=output[0][0]
       if output>0.2:
-           return "Spam"
+           return "Spam,"+custom_model(str(user_input['sms']))
       else:
-           return "safe"
+           return "safe,"+custom_model(str(user_input['sms']))
     
 app = Flask(__name__)  
 app.config['SECRET_KEY'] = '6c6722beeac20a0d45f7e977'
