@@ -8,3 +8,5 @@ pandas
 pickle
 googlesearch
 tld
+contractions
+nltk
