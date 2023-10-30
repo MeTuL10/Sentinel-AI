@@ -21,8 +21,9 @@
         </nav></header>
     <!-- <textarea name="message" rows="4" class="custom-input"></textarea> -->
     <p class="about">MESSAGE PREDICTION<br><br>
-        model : LSTM 
-        <br> Accuracy: 98.6%<br>
+        model 1: LSTM 
+        <br> Accuracy: 98.6%
+        <br> model 2 : Custom NLP hueristic based model<br>
         <br> Enter the message:
       </p>
     <form method="POST">
@@ -30,7 +31,9 @@
         <div class="custom-input">{{form.sms}}</div>
         <!-- <input type="submit" class="btn-info" value="Predict"> -->
         <div class="inputbox">{{ form.submit(class="btn-info") }}</div>
-        <div class="output">{{results}}</div>
+        <div class="output">{{result1}}</div>
+        <div class="output">{{result2}}</div>
+        <div class="output">{{obs}}</div>
     </form>
     <footer>
         <p class="designer">Made by <a href="https://github.com/MeTuL10">Metul Prabhu</a> and <a href="https://github.com/OmbudRov">Abhinav Bhatia</a></p>

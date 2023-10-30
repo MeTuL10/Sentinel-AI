@@ -221,7 +221,17 @@ def custom_model(data):
       predictions=dict(sorted(predictions.items(),key=lambda x: x[1], reverse=True))
       temp=list(predictions.keys())
       return(temp[0])
-
+attackdef={"phishing":"Phishing attacks are a type of cyber-attack where attackers attempt to deceive individuals into revealing sensitive information, such as usernames, passwords, and financial information, by impersonating a trusted entity. These attacks are typically carried out through email, websites, or other digital communication methods.",
+           "Spear Phishing":"In these attacks, cybercriminals customize their phishing messages to target specific individuals or organizations. They often gather information about their targets to make the fraudulent communication appear more convincing. ",
+           "Malware Distribution":"Malware distribution refers to the dissemination of malicious software, or malware, to infect and compromise computer systems. Cybercriminals distribute malware through various methods, including email attachments, malicious downloads, infected websites, and compromised software.",
+           "Ransomware Attacks":"Ransomware attacks involve the use of malware that encrypts a victim's data and demands a ransom in exchange for the decryption key. Once the victim's data is encrypted, they are often presented with a ransom note that specifies the amount of money they must pay to regain access to their data. ",
+           "Business Email Compromise":"Often referred to as CEO fraud, is a type of cyber-attack in which an attacker impersonates a high-ranking executive or trusted partner within an organization. The attacker uses this deception to manipulate employees into performing actions such as transferring funds, sharing sensitive information, or initiating fraudulent transactions. ",
+           "Email Spoofing":"Email spoofing is a technique used to forge the sender's email address to make it appear as though an email originates from a legitimate source. This is often used in phishing attacks to deceive recipients into thinking the email is from a trusted entity.",
+           "Credential Theft":"Credential theft refers to the theft of usernames and passwords, often through various means such as phishing, keyloggers, or data breaches. Cybercriminals target these credentials to gain unauthorized access to online accounts, systems, and networks. ",
+           "SMS Phishing":"Type of phishing attack that occurs through text messages (SMS) sent to mobile phones. Cybercriminals send deceptive SMS messages that appear to be from a legitimate source, often containing malicious links or instructions to call a particular number. ",
+           "Instant Messaging Malware Distribution":"Refers to the spread of malicious software through instant messaging platforms. Attackers may send malware-laden files, links, or messages through popular messaging apps like WhatsApp, Facebook Messenger, or others. ",
+           "Social Engineering":"Involves manipulating individuals through psychological tactics on messaging platforms. Cybercriminals may use these apps to build trust with their targets, exploit emotions, or impersonate trusted contacts to persuade victims into sharing sensitive information, sending money, or taking other actions that benefit the attacker. ",
+           "Message Spoofing for Phishing":"Message spoofing for phishing involves falsifying the source of messages in messaging apps or email to deceive recipients into thinking that the message is from a trusted sender. Cybercriminals use this technique to trick individuals into providing sensitive information or taking actions that compromise their security."}
 def return_prediction_mail(model,user_input):  
       mail=[str(user_input['mail'])]
       with open('models\\mailtoken.pickle', 'rb') as handle:
@@ -233,10 +243,14 @@ def return_prediction_mail(model,user_input):
       sequences_matrix = pad_sequences(sequences,maxlen=maxlen1)
       output=model.predict(sequences_matrix)
       output=output[0][0]
+      dl_result="SAFE"
       if output>0.2:
-           return "Spam,"+custom_model(str(user_input['mail']))
-      else:
-           return "safe,"+custom_model(str(user_input['mail']))
+           dl_result= "SPAM"
+      custom_res=custom_model(str(user_input['mail']))
+      dlres="Deep Learning model prediction: "+dl_result
+      custres="Custom model prediction: "+custom_res.upper()
+      obs=attackdef[custom_res]+" Do not access any links or disclose any information unless you trust the sender."
+      return (dlres,custres,obs)
     
 def return_prediction_url(model,user_input):   
       map=['benign', 'defacement', 'malware', 'phishing']
@@ -246,7 +260,7 @@ def return_prediction_url(model,user_input):
       X = df[['use_of_ip','abnormal_url', 'count.', 'count-www', 'count@','count_dir', 'count_embed_domian', 'short_url', 'count-https','count-http', 
             'count%', 'count?', 'count-', 'count=', 'url_length','hostname_length', 'sus_url', 'fd_length', 'tld_length', 'count-digits','count-letters']]
       y=model.predict(X)
-      return map[y[0]]
+      return "Random forest model prediction: "+ map[y[0]].upper()
  
 def return_prediction_sms(model,user_input):    
       sms=[str(user_input['sms'])]
@@ -260,10 +274,14 @@ def return_prediction_sms(model,user_input):
       sequences_matrix = pad_sequences(sequences,maxlen=max_len)
       output=model.predict(sequences_matrix)
       output=output[0][0]
+      dl_result="SAFE"
       if output>0.2:
-           return "Spam,"+custom_model(str(user_input['sms']))
-      else:
-           return "safe,"+custom_model(str(user_input['sms']))
+           dl_result= "SPAM"
+      custom_res=custom_model(str(user_input['sms']))
+      dlres="Deep Learning model prediction: "+dl_result
+      custres="Custom model prediction: "+custom_res.upper()
+      obs=attackdef[custom_res]+" Do not access any links or disclose any information unless you trust the sender."
+      return (dlres,custres,obs)
     
 app = Flask(__name__)  
 app.config['SECRET_KEY'] = '6c6722beeac20a0d45f7e977'
@@ -299,8 +317,8 @@ def Email():
       if form.validate_on_submit():
             session['mail'] = form.mail
             results= return_prediction_mail(predictor,session)
-            return render_template('Email.html',form=form,results=results)
-      return render_template('Email.html',form=form,results='')
+            return render_template('Email.html',form=form,result1=results[0],result2=results[1],obs=results[2])
+      return render_template('Email.html',form=form,result1='',result2='',obs='')
 
 @app.route('/URL', methods=['GET', 'POST'])
 def URL():
@@ -332,7 +350,7 @@ def Messages():
       if form.validate_on_submit():
             session['sms'] = form.sms
             results= return_prediction_sms(predictor,session)
-            return render_template('Messages.html',form=form,results=results)
-      return render_template('Messages.html',form=form,results='')
+            return render_template('Messages.html',form=form,result1=results[0],result2=results[1],obs=results[2])
+      return render_template('Messages.html',form=form,result1='',result2='',obs='')
 if __name__ == '__main__':  
    app.run(debug = True)

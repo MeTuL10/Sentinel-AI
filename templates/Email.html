@@ -22,8 +22,9 @@
     </nav></header>
   <!-- Text Box -->
   <p class="about">E-MAIL PREDICTION<br><br>
-    model : Nueral network model with dense layers
-    <br> Accuracy: 94.9%<br>
+    model 1 : Neural network model with dense layers
+    <br> Accuracy: 94.9%
+    <br> model 2 : Custom NLP hueristic based model<br>
     <br> Enter the e-email subject or content(subject + content will provide better analysis)
   </p>
     <form method="POST">
@@ -31,7 +32,9 @@
     <div class="custom-input">{{form.mail}}</div>
     <!-- <input type="submit" class="btn-info" value="Predict"> -->
     <div class="inputbox">{{ form.submit(class="btn-info") }}</div>
-    <div class="output">{{results}}</div>
+    <div class="output">{{result1}}</div>
+    <div class="output">{{result2}}</div>
+    <div class="output">{{obs}}</div>
 </form>
 <footer>
   <p class="designer">Made by <a href="https://github.com/MeTuL10">Metul Prabhu</a> and <a href="https://github.com/OmbudRov">Abhinav Bhatia</a></p>
