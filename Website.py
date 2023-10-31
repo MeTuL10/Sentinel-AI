@@ -247,7 +247,7 @@ def return_prediction_mail(model,user_input):
       if output>0.2:
            dl_result= "SPAM"
       custom_res=custom_model(str(user_input['mail']))
-      dlres="Deep Learning model prediction: "+dl_result
+      dlres="Deep Learning model prediction: "+dl_result+", spam score: "+str(round(output*100,2))+"%"
       custres="Custom model prediction: SAFE"
       obs='The received e-mail may be safe. If any URLs are present, use the URL prediction to verify the URL.'
       if output>0.1:
@@ -281,7 +281,7 @@ def return_prediction_sms(model,user_input):
       if output>0.2:
            dl_result= "SPAM"
       custom_res=custom_model(str(user_input['sms']))
-      dlres="Deep Learning model prediction: "+dl_result
+      dlres="Deep Learning model prediction: "+dl_result+", spam score: "+str(round(output*100,2))+"%"
       custres="Custom model prediction: SAFE"
       obs='The received message may be safe. If any URLs are present, use the URL prediction to verify the URL.'
       if output>0.1:
