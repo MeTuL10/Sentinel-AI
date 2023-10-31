@@ -248,8 +248,11 @@ def return_prediction_mail(model,user_input):
            dl_result= "SPAM"
       custom_res=custom_model(str(user_input['mail']))
       dlres="Deep Learning model prediction: "+dl_result
-      custres="Custom model prediction: "+custom_res.upper()
-      obs=attackdef[custom_res]+" Do not access any links or disclose any information unless you trust the sender."
+      custres="Custom model prediction: SAFE"
+      obs='The received e-mail may be safe. If any URLs are present, use the URL prediction to verify the URL.'
+      if output>0.1:
+            custres="Custom model prediction: "+custom_res.upper()
+            obs=attackdef[custom_res]+" Do not access any links or disclose any information unless you trust the sender."
       return (dlres,custres,obs)
     
 def return_prediction_url(model,user_input):   
@@ -279,8 +282,11 @@ def return_prediction_sms(model,user_input):
            dl_result= "SPAM"
       custom_res=custom_model(str(user_input['sms']))
       dlres="Deep Learning model prediction: "+dl_result
-      custres="Custom model prediction: "+custom_res.upper()
-      obs=attackdef[custom_res]+" Do not access any links or disclose any information unless you trust the sender."
+      custres="Custom model prediction: SAFE"
+      obs='The received message may be safe. If any URLs are present, use the URL prediction to verify the URL.'
+      if output>0.1:
+            custres="Custom model prediction: "+custom_res.upper()
+            obs=attackdef[custom_res]+" Do not access any links or disclose any information unless you trust the sender."
       return (dlres,custres,obs)
     
 app = Flask(__name__)  
