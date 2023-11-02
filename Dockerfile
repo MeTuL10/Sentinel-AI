@@ -5,4 +5,4 @@ COPY requirements.txt .
 COPY ./models ./models
 RUN pip install -r requirements.txt
 COPY . .
-CMD [ "python", "./app.py" ]
+CMD [ "python", "./website.py" ]
