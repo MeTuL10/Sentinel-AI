@@ -182,6 +182,7 @@ rf=1
 
 english_punctuations = string.punctuation
 punctuations_list = english_punctuations
+nltk.download('stopwords')
 stop_words = stopwords.words('english')
 def preprocess(data):
       def small(data):
