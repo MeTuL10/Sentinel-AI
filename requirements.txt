@@ -6,7 +6,8 @@ flask===2.2.2
 tensorflow-cpu
 pandas
 # pickle
-googlesearch
+# googlesearch
+google
 tld
 contractions
 nltk
