@@ -359,4 +359,4 @@ def Messages():
             return render_template('Messages.html',form=form,result1=results[0],result2=results[1],obs=results[2])
       return render_template('Messages.html',form=form,result1='',result2='',obs='')
 if __name__ == '__main__':  
-   app.run(debug = True)
+   app.run(host='0.0.0.0',port=5000)
