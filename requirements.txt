@@ -11,3 +11,4 @@ google
 tld
 contractions
 nltk
+Werkzeug==2.2.2
