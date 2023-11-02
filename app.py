@@ -164,7 +164,7 @@ def urlprocess(df): # feature extraction of url
       return df
 
 def url_model_train(): #traing the random forest model for url prediction
-      df=pd.read_csv('dataset\\malicious_phish.csv')
+      df=pd.read_csv('dataset/malicious_phish.csv')
       df=urlprocess(df)
       #array(['benign', 'defacement', 'malware', 'phishing']
       mapd={'benign':0,'defacement':1,'malware':2,'phishing':3}
@@ -177,8 +177,8 @@ def url_model_train(): #traing the random forest model for url prediction
       rf = RandomForestClassifier(n_estimators=100,max_features='sqrt')
       rf.fit(X_train,y_train)
       return rf
-#rf=url_model_train()
-rf=1
+rf=url_model_train()
+
 
 english_punctuations = string.punctuation
 punctuations_list = english_punctuations
@@ -313,7 +313,7 @@ def home():
 
 @app.route('/Email', methods=['GET', 'POST'])
 def Email():
-      predictor = load_model('models\\mail.keras')
+      predictor = load_model('models/mail.keras')
       form = mailForm()
       if form.is_submitted():
             print("submitted")
@@ -346,7 +346,7 @@ def URL():
 
 @app.route('/Messages', methods=['GET', 'POST'])
 def Messages():
-      predictor = load_model('models\\sms.keras')
+      predictor = load_model('models/sms.keras')
       form = smsForm()
       if form.is_submitted():
             print("submitted")
