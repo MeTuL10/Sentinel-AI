@@ -177,7 +177,8 @@ def url_model_train(): #traing the random forest model for url prediction
       rf = RandomForestClassifier(n_estimators=100,max_features='sqrt')
       rf.fit(X_train,y_train)
       return rf
-rf=url_model_train()
+#rf=url_model_train()
+rf=1
 
 english_punctuations = string.punctuation
 punctuations_list = english_punctuations
