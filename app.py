@@ -236,7 +236,7 @@ attackdef={"phishing":"Phishing attacks are a type of cyber-attack where attacke
            "Message Spoofing for Phishing":"Message spoofing for phishing involves falsifying the source of messages in messaging apps or email to deceive recipients into thinking that the message is from a trusted sender. Cybercriminals use this technique to trick individuals into providing sensitive information or taking actions that compromise their security."}
 def return_prediction_mail(model,user_input):  
       mail=[str(user_input['mail'])]
-      with open('models\\mailtoken.pickle', 'rb') as handle:
+      with open('models/mailtoken.pickle', 'rb') as handle:
             t = pickle.load(handle)
       maxlen1=5916
       df1=pd.DataFrame(mail,columns=["text"])
@@ -269,7 +269,7 @@ def return_prediction_url(model,user_input):
  
 def return_prediction_sms(model,user_input):    
       sms=[str(user_input['sms'])]
-      with open('models\\smstoken.pickle', 'rb') as handle:
+      with open('models/smstoken.pickle', 'rb') as handle:
             t = pickle.load(handle)
       max_words = 1000
       max_len = 150
