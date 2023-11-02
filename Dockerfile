@@ -3,6 +3,7 @@ EXPOSE 5000/tcp
 WORKDIR /app
 COPY requirements.txt .
 COPY ./models ./models
+COPY ./dataset ./dataset
 RUN pip install -r requirements.txt
 COPY . .
 CMD [ "python", "./app.py" ]
