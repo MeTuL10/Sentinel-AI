@@ -212,7 +212,7 @@ def preprocess(data):
 def custom_model(data):
       data=preprocess(data)
       data=data.split()
-      f=open("models\\cyberattacks.json")
+      f=open("models/cyberattacks.json")
       model=json.load(f)
       attacks=model.keys()
       predictions=dict()
