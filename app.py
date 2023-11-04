@@ -163,21 +163,21 @@ def urlprocess(df): # feature extraction of url
       # df = df.drop("tld",1)
       return df
 
-def url_model_train(): #traing the random forest model for url prediction
-      df=pd.read_csv('dataset/malicious_phish.csv')
-      df=urlprocess(df)
-      #array(['benign', 'defacement', 'malware', 'phishing']
-      mapd={'benign':0,'defacement':1,'malware':2,'phishing':3}
-      df['type_code']=df['type'].apply(lambda i: mapd[i])
-      X = df[['use_of_ip','abnormal_url', 'count.', 'count-www', 'count@','count_dir', 'count_embed_domian', 'short_url', 'count-https','count-http', 
-            'count%', 'count?', 'count-', 'count=', 'url_length','hostname_length', 'sus_url', 'fd_length', 'tld_length', 'count-digits','count-letters']]
-      y = df['type_code']
-      X_train, X_test, y_train, y_test = train_test_split(X, y, stratify=y, test_size=0.2,shuffle=True, random_state=5)
+# def url_model_train(): #traing the random forest model for url prediction
+#       df=pd.read_csv('dataset/malicious_phish.csv')
+#       df=urlprocess(df)
+#       #array(['benign', 'defacement', 'malware', 'phishing']
+#       mapd={'benign':0,'defacement':1,'malware':2,'phishing':3}
+#       df['type_code']=df['type'].apply(lambda i: mapd[i])
+#       X = df[['use_of_ip','abnormal_url', 'count.', 'count-www', 'count@','count_dir', 'count_embed_domian', 'short_url', 'count-https','count-http', 
+#             'count%', 'count?', 'count-', 'count=', 'url_length','hostname_length', 'sus_url', 'fd_length', 'tld_length', 'count-digits','count-letters']]
+#       y = df['type_code']
+#       X_train, X_test, y_train, y_test = train_test_split(X, y, stratify=y, test_size=0.2,shuffle=True, random_state=5)
       
-      rf = RandomForestClassifier(n_estimators=100,max_features='sqrt')
-      rf.fit(X_train,y_train)
-      return rf
-rf=url_model_train()
+#       rf = RandomForestClassifier(n_estimators=100,max_features='sqrt')
+#       rf.fit(X_train,y_train)
+#       return rf
+#rf=url_model_train()
 
 
 english_punctuations = string.punctuation
@@ -223,6 +223,7 @@ def custom_model(data):
       predictions=dict(sorted(predictions.items(),key=lambda x: x[1], reverse=True))
       temp=list(predictions.keys())
       return(temp[0])
+
 attackdef={"phishing":"Phishing attacks are a type of cyber-attack where attackers attempt to deceive individuals into revealing sensitive information, such as usernames, passwords, and financial information, by impersonating a trusted entity. These attacks are typically carried out through email, websites, or other digital communication methods.",
            "Spear Phishing":"In these attacks, cybercriminals customize their phishing messages to target specific individuals or organizations. They often gather information about their targets to make the fraudulent communication appear more convincing. ",
            "Malware Distribution":"Malware distribution refers to the dissemination of malicious software, or malware, to infect and compromise computer systems. Cybercriminals distribute malware through various methods, including email attachments, malicious downloads, infected websites, and compromised software.",
@@ -234,6 +235,7 @@ attackdef={"phishing":"Phishing attacks are a type of cyber-attack where attacke
            "Instant Messaging Malware Distribution":"Refers to the spread of malicious software through instant messaging platforms. Attackers may send malware-laden files, links, or messages through popular messaging apps like WhatsApp, Facebook Messenger, or others. ",
            "Social Engineering":"Involves manipulating individuals through psychological tactics on messaging platforms. Cybercriminals may use these apps to build trust with their targets, exploit emotions, or impersonate trusted contacts to persuade victims into sharing sensitive information, sending money, or taking other actions that benefit the attacker. ",
            "Message Spoofing for Phishing":"Message spoofing for phishing involves falsifying the source of messages in messaging apps or email to deceive recipients into thinking that the message is from a trusted sender. Cybercriminals use this technique to trick individuals into providing sensitive information or taking actions that compromise their security."}
+
 def return_prediction_mail(model,user_input):  
       mail=[str(user_input['mail'])]
       with open('models/mailtoken.pickle', 'rb') as handle:
@@ -330,6 +332,8 @@ def Email():
 
 @app.route('/URL', methods=['GET', 'POST'])
 def URL():
+      filename = 'models/url.pickle'
+      rf = pickle.load(open(filename, 'rb'))
       form = urlForm()
       if form.is_submitted():
             print("submitted")
